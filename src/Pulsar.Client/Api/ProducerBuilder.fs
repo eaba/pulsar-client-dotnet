@@ -125,6 +125,12 @@ type ProducerBuilder private (client: PulsarClient, config: ProducerConfiguratio
             { config with
                 HashingScheme = hashingScheme })
 
+    member this.InitialSequenceId initialSequenceId =
+        ProducerBuilder(
+            client,
+            { config with
+                InitialSequenceId = initialSequenceId })
+
     member this.CreateAsync() =
         config
         |> verify
