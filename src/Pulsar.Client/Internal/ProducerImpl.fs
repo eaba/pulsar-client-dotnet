@@ -495,3 +495,5 @@ type internal ProducerImpl private (producerConfig: ProducerConfiguration, clien
         member this.ProducerId = producerId
 
         member this.Topic = %producerConfig.Topic.CompleteTopicName
+
+        member this.LastSequenceId = 0L
